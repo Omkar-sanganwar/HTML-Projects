@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .outer-div {
+            width: 80%;
+            margin: 20px auto;
+            border: 2px solid #b22222;
+            padding: 10px;
+        }
+
+        .header-div,
+        .footer-div {
+            background-color: #f4f4f4;
+            border: 2px solid #b22222;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content-div {
+            display: flex;
+            border: 2px solid #b22222;
+            margin-bottom: 10px;
+            padding: 10px;
+            gap: 10px;
+            /* Adds space between inner divs */
+        }
+
+        .inner-div {
+            border: 2px solid #b22222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar {
+            width: 20%;
+            height: 500px;
+            /* Increased height for sidebars */
+            background-color: #eaeaea;
+
+        }
+
+        .main-section {
+            width: 60%;
+            height: 500px;
+            /* Increased height for main section */
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-div">
+        <div class="header-div">Header Section</div>
+        <div class="content-div">
+            <div class="inner-div sidebar">Sidebar</div>
+            <div class="inner-div main-section">Main Section</div>
+            <div class="inner-div sidebar">Sidebar</div>
+        </div>
+        <div class="footer-div">Footer Section</div>
+    </div>
+</body>
+
+</html>
