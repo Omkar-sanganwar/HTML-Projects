@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Interactions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: white;
+        }
+
+        .image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .text {
+            margin: 16px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        .opacity {
+            opacity: 0.5;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card" id="card1">
+            <div class="image">
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Image 1">
+            </div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod nisl ac neque malesuada, at hendrerit sapien tempus.</div>
+            <div class="buttons">
+                <button onclick="toggleDisplay()">Display: none</button>
+                <button onclick="changeOpacity()">Change Opacity</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" id="card2">
+            <div class="image">
+                <img src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg" alt="Image 2">
+            </div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod nisl ac neque malesuada, at hendrerit sapien tempus.</div>
+            <div class="buttons">
+                <button onclick="toggleVisibility()">Visibility: hidden</button>
+                <button onclick="changeOpacity()">Change Opacity</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" id="card3">
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0va-Y5gI_CwfAIlHes8kpl0pa_H5A1eAwYlRLivX-LiFpwQHA4VC0adh1Ng1ZDvLETII&usqp=CAU" alt="Image 3">
+            </div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod nisl ac neque malesuada, at hendrerit sapien tempus.</div>
+            <div class="buttons">
+                <button onmouseover="hoverEffect()">Hover</button>
+                <button onclick="changeOpacity()">Change Opacity</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDisplay() {
+            const text1 = document.querySelector('#card1 .text');
+            text1.classList.toggle('hidden');
+        }
+
+        function toggleVisibility() {
+            const text2 = document.querySelector('#card2 .text');
+            text2.classList.toggle('invisible');
+        }
+
+        function changeOpacity() {
+            const images = document.querySelectorAll('.image img');
+            images.forEach(img => img.classList.toggle('opacity'));
+        }
+
+        function hoverEffect() {
+            alert("You hovered over the button!");
+        }
+    </script>
+</body>
+</html>
